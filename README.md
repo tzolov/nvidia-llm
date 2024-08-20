@@ -1,25 +1,13 @@
-# Getting Started
+# Demo App: SpringAI - NVIDIA LLM API integration
 
-### Reference Documentation
-For further reference, please consider the following sections:
+[NVIDIA LLM API](https://docs.api.nvidia.com/nim/reference/llm-apis) is a proxy AI Inference Engine offering a wide range of models from [various providers](https://docs.api.nvidia.com/nim/reference/llm-apis#models).
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.3.2/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.3.2/maven-plugin/build-image.html)
-* [OpenAI](https://docs.spring.io/spring-ai/reference/api/clients/openai-chat.html)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.3.2/reference/htmlsingle/index.html#web)
+Spring AI integrates with the NVIDIA LLM API by reusing the existing Spring AI [OpenAI](https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html) client. 
 
-### Guides
-The following guides illustrate how to use some features concretely:
+For this you need to set the base-url to `https://integrate.api.nvidia.com`, select one of the provided https://docs.api.nvidia.com/nim/reference/llm-apis#model[LLM models] and get an `api-key` for it.
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+![SpringAI - NVIDIA LLM API integration](/doc/SpringAI-NVIDIA-API.jpg)
 
-### Maven Parent overrides
+NOTE: NVIDIA LLM API requires the `max-token` parameter to be explicitly set or server error will be thrown.
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
-
+Find more in the SpringAI/NVIDIA Reference documentation: https://docs.spring.io/spring-ai/reference/api/chat/nvidia-chat.html
